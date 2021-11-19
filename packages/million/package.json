@@ -1,0 +1,60 @@
+{
+  "name": "million",
+  "version": "0.7.1",
+  "description": "<1kb compiler-augmented virtual DOM. It's fast!",
+  "main": "dist/million.umd.js",
+  "module": "dist/million.esm.js",
+  "jsdelivr": "dist/million.esm.js",
+  "unpkg": "dist/million.esm.js",
+  "types": "dist/million.d.ts",
+  "scripts": {
+    "dev": "zx scripts/dev.mjs",
+    "build": "zx scripts/build.mjs",
+    "lint": "eslint src/**",
+    "cleanup": "prettier --write src --parser typescript",
+    "test": "jest --silent --runInBand",
+    "bench": "vite --config benchmarks/vite.config.ts",
+    "release": "zx scripts/release.mjs && zx scripts/citation.mjs",
+    "welcome": "zx scripts/welcome.mjs",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidenybai/million.git"
+  },
+  "files": [
+    "dist/**/*",
+    "jsx-runtime.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/million.esm.js",
+      "require": "./dist/million.cjs.js"
+    },
+    "./jsx-runtime": {
+      "import": "./dist/jsx-runtime.esm.js",
+      "require": "./dist/jsx-runtime.cjs.js"
+    }
+  },
+  "sideEffects": false,
+  "keywords": [
+    "million",
+    "virtualdom",
+    "vdom",
+    "library",
+    "web",
+    "ui",
+    "browser"
+  ],
+  "funding": "https://github.com/sponsors/aidenybai",
+  "author": {
+    "name": "Aiden Bai",
+    "email": "aiden.bai05@gmail.com",
+    "url": "https://aidenybai.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aidenybai/million/issues"
+  },
+  "homepage": "https://github.com/aidenybai/million"
+}
